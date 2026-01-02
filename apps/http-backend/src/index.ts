@@ -63,13 +63,26 @@ app.post("/login", async (req:Request,res:Response)=>{
         if (!password ||  !email ) {
          return res.status(400).json({ message: "All fields required" });
            }
-
-        const hashedPassword = await bcrypt.compare(password,)
-          const =await prismaClient.user.findFirst({
+        const user = await prismaClient.user.findUnique({
             where:{
-
+                email:email
             }
-          })
+        })
+        if(!user){
+            return res.status(403).json({
+                message:"Email already exist"
+            })
+        }
+
+        const comparePassword = await bcrypt.compare(password,user.password)
+        if(!comparePassword){
+                return res.status(403).json({
+                message:"Invalid password"
+            })
+        }
+         
+
+ 
       res.status(200).json({
         message:"User created Successfully"
       })
