@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"tsc -b",
+    "build": "tsc -b",
     "start": "node ./dist/index.js",
-    "dev":"npm run build && npm run start"
+    "dev": "npm run build && npm run start"
   },
   "keywords": [],
   "dependencies": {
@@ -14,13 +14,14 @@
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
     "@repo/db": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@repo/zod":"workspace:*"
+    "@repo/zod": "workspace:*"
   },
   "author": "",
   "license": "ISC",
