@@ -35,12 +35,12 @@ model Class {
    id                  String           @unique  @default(uuid())
    Title               String              
    Description         String?
-   isActive            Boolean               @default(false)
    teacherId           String
    teacher             User             @relation("TeacherClasses",fields:[teacherId], references: [id]) //kis teacher ne class create ki h
    attendances         Attendance[]
 
 }
+
 
 model Attendance {
    id                  String             @unique @default(uuid())

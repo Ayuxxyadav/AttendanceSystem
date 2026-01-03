@@ -12,3 +12,12 @@ export const loginUserSchema = z.object({
     email:z.email("Invalid email"),
     password:z.string("Invalid Password")
 })
+
+export const classSchema = z.object({
+    title:z.string("all fields required"),
+    description:z.string("all fields required")
+})
+
+export const studentIdSchema = z.object({
+    studentId:z.string()
+})
